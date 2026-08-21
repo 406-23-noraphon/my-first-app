@@ -26,7 +26,7 @@ def reset_game():
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2):
+def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
 
@@ -80,7 +80,7 @@ st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
 
 # 2. แถบแสดงเวลานับถอยหลัง
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
-    time_left = int(30 - (time.time() - st.session_state.start))
+    time_left = int(67 - (time.time() - st.session_state.start))
 
     if time_left > 0:
         st.error(f"⏳ เหลือเวลา: {time_left} วินาที")
@@ -113,9 +113,6 @@ st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
 st.session_state.ans3_val = ans3
 st.session_state.ans4_val = ans4
-
-# ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
-
 
 # 4. ปุ่มส่งคำตอบ
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
